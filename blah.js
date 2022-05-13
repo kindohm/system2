@@ -10,6 +10,8 @@ var restType = 0;
 var event2Probability = 25;
 var weightedEventTypes = [1,2];
 
+var generated = [];
+
 var weights = {
 	'4n': 1,
 	'8nd': 1,
@@ -78,6 +80,8 @@ function generate(){
 	for (var i = 0; i < events.length; i++){
 		outlet(0, events[i].index, events[i].len, events[i].rest, events[i].type);
 	}	
+	
+	generated = events;
 }
 
 function rests(val) {
@@ -145,3 +149,29 @@ function fill1b(val){
 	fill1bOn = val === 1;
 	generate();
 }
+
+function shuffle() {
+
+  var array = generated;
+  var currentIndex = array.length,  randomIndex;
+
+  // While there remain elements to shuffle.
+  while (currentIndex != 0) {
+
+    // Pick a remaining element.
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+
+	for (var i = 0; i < array.length; i++){
+		array[i].index = i;
+		outlet(0, array[i].index, array[i].len, array[i].rest, array[i].type);
+	}	
+
+	generated = array;
+}
+

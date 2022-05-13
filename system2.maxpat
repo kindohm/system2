@@ -40,6 +40,30 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-132",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 984.0, 707.0, 44.0, 22.0 ],
+					"text" : "shuffle"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-130",
+					"maxclass" : "button",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 978.0, 643.0, 24.0, 24.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-124",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
@@ -1327,7 +1351,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 430.08526885509491, 458.0, 262.0, 80.0 ],
-					"text" : "8n 1 1"
+					"text" : "8nd 1 1"
 				}
 
 			}
@@ -1915,19 +1939,19 @@
 					"restore" : 					{
 						"button" : [ 0.0 ],
 						"button[3]" : [ 0.0 ],
-						"number" : [ 54 ],
-						"number[1]" : [ 39 ],
-						"number[2]" : [ 24 ],
+						"number" : [ 29 ],
+						"number[1]" : [ 41 ],
+						"number[2]" : [ 15 ],
 						"number[3]" : [ 1 ],
 						"number[4]" : [ 8 ],
 						"number[5]" : [ 3 ],
 						"number[6]" : [ 2 ],
-						"number[7]" : [ 127 ],
+						"number[7]" : [ 109 ],
 						"number[8]" : [ 180 ],
-						"number[9]" : [ 18 ],
-						"radiogroup" : [ 1, 1, 1, 1 ],
-						"slider" : [ 47 ],
-						"toggle" : [ 1 ],
+						"number[9]" : [ 9 ],
+						"radiogroup" : [ 0, 1, 1, 1 ],
+						"slider" : [ 35 ],
+						"toggle" : [ 0 ],
 						"toggle[1]" : [ 1 ],
 						"toggle[2]" : [ 1 ],
 						"umenu" : [ 1 ],
@@ -2157,7 +2181,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 667.835001157122633, 118.751940999999988, 47.999999000000003, 66.0 ],
 					"size" : 4,
-					"values" : [ 1, 1, 1, 1 ],
+					"values" : [ 0, 1, 1, 1 ],
 					"varname" : "radiogroup"
 				}
 
@@ -2498,6 +2522,20 @@
 				"patchline" : 				{
 					"destination" : [ "obj-85", 0 ],
 					"source" : [ "obj-124", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-132", 0 ],
+					"source" : [ "obj-130", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-132", 0 ]
 				}
 
 			}
@@ -3095,6 +3133,13 @@
 			}
  ],
 		"dependency_cache" : [ 			{
+				"name" : "Untitled",
+				"bootpath" : "~/Desktop",
+				"patcherrelativepath" : "../../Desktop",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "blah.js",
 				"bootpath" : "~/code/system2",
 				"patcherrelativepath" : ".",
