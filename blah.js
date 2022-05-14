@@ -3,7 +3,7 @@ inlets = 1;
 var numEvents = 1;
 var percentRest = 0;
 var percentRepeat = 0;
-var allEventLengths = ['4n', '8nd', '8n', '16n'];
+var allEventLengths = ['1n', '2nd', '2n', '4nd', '4n', '8nd', '8n', '16n'];
 var eventLengths = allEventLengths;
 var eventTypes = [1,2];
 var restType = 0;
@@ -13,6 +13,10 @@ var weightedEventTypes = [1,2];
 var generated = [];
 
 var weights = {
+	'1n': 1,
+	'2nd': 1,
+	'2n': 1,
+	'4nd': 1,
 	'4n': 1,
 	'8nd': 1,
 	'8n': 1,
@@ -104,6 +108,7 @@ function durations(){
 	var newEventLengths = [];
 	
 	for (var i = 0; i < arguments.length; i++) {
+		post('duration', arguments[i], '\n');
 		if (arguments[i] === 1) {
 			newEventLengths.push(allEventLengths[i]);
 		}
@@ -114,10 +119,14 @@ function durations(){
 }
 
 function durationWeights(){
-	weights["4n"] = arguments[0];
-	weights["8nd"] = arguments[1];
-	weights["8n"] = arguments[2];
-	weights["16n"] = arguments[3];
+	weights["1n"] = arguments[0];
+	weights["2nd"] = arguments[1];
+	weights["2n"] = arguments[2];
+	weights["4nd"] = arguments[3];
+	weights["4n"] = arguments[4];
+	weights["8nd"] = arguments[5];
+	weights["8n"] = arguments[6];
+	weights["16n"] = arguments[7];
 	generate();
 }
 
