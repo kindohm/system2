@@ -108,7 +108,6 @@ function durations(){
 	var newEventLengths = [];
 	
 	for (var i = 0; i < arguments.length; i++) {
-		post('duration', arguments[i], '\n');
 		if (arguments[i] === 1) {
 			newEventLengths.push(allEventLengths[i]);
 		}
